@@ -14,24 +14,16 @@
 # Global Behavior
 # -------------------------
 
-# Keep prompt compact (no empty line between commands)
 add_newline = false
-
-# Maximum time (ms) Starship waits for a command before skipping it
 command_timeout = 1000
-
-# Timeout for scanning the current directory (git, languages, etc.)
 scan_timeout = 30
-
-# Right-side prompt (kept minimal)
 right_format = "$time"
 
 
 # -------------------------
 # Prompt Layout
 # -------------------------
-# First line: context (OS, user, path, git, runtimes)
-# Second line: prompt symbol
+
 format = """
 $os$username$directory$git_branch$git_status$nodejs$python$rust$docker_context
 $character
@@ -66,11 +58,11 @@ ssh_symbol = " "
 # -------------------------
 
 [directory]
-style                = "bold blue"
-read_only            = " 󰌾"
-truncation_length    = 3
-truncate_to_repo     = true
-format               = "[$path]($style) "
+style             = "bold blue"
+read_only         = " 󰌾"
+truncation_length = 3
+truncate_to_repo  = true
+format            = "[$path]($style) "
 
 
 # -------------------------
@@ -167,54 +159,124 @@ time_format = "%H:%M"
 # -------------------------
 
 [os.symbols]
-Macos     = " "
-Linux     = " "
-Ubuntu    = " "
-Arch      = " "
-Debian    = " "
-Fedora    = " "
-Windows   = "󰍲 "
-Unknown   = " "
+Macos   = " "
+Linux   = " "
+Ubuntu  = " "
+Arch    = " "
+Debian  = " "
+Fedora  = " "
+Windows = "󰍲 "
+Unknown = " "
 
 
 # -------------------------
 # Disabled / Low-Signal Modules
 # -------------------------
-# These exist only to provide symbols if ever enabled
 
-[buf]        symbol = " "
-[bun]        symbol = " "
-[c]          symbol = " "
-[cpp]        symbol = " "
-[cmake]      symbol = " "
-[conda]      symbol = " "
-[crystal]    symbol = " "
-[dart]       symbol = " "
-[deno]       symbol = " "
-[elixir]     symbol = " "
-[elm]        symbol = " "
-[fennel]     symbol = " "
-[fortran]    symbol = " "
-[golang]     symbol = " "
-[gradle]     symbol = " "
-[guix_shell] symbol = " "
-[haskell]    symbol = " "
-[haxe]       symbol = " "
-[java]       symbol = " "
-[julia]      symbol = " "
-[kotlin]     symbol = " "
-[lua]        symbol = " "
-[meson]      symbol = "󰔷 "
-[nim]        symbol = "󰆥 "
-[nix_shell]  symbol = " "
-[ocaml]      symbol = " "
-[package]    symbol = "󰏗 "
-[perl]       symbol = " "
-[php]        symbol = " "
-[pixi]       symbol = "󰏗 "
-[rlang]      symbol = "󰟔 "
-[ruby]       symbol = " "
-[scala]      symbol = " "
-[swift]      symbol = " "
-[xmake]      symbol = " "
-[zig]        symbol = " "
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fortran]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[gradle]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[xmake]
+symbol = " "
+
+[zig]
+symbol = " "

@@ -102,7 +102,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 # Fish-like autosuggestions based on history (async)
 # Accept with → or Ctrl+E
-zinit ice wait'0'
+zinit ice wait'0' silent
 zinit light zsh-users/zsh-autosuggestions
 
 
@@ -110,12 +110,12 @@ zinit light zsh-users/zsh-autosuggestions
 
 # Enhanced Tab completion with fzf-style UI (async)
 # Shows previews, groups, and descriptions
-zinit ice wait'1'
+zinit ice wait'1' silent
 zinit light Aloxaf/fzf-tab
 
 # Search command history using partial matches (async)
 # ↑ / ↓ cycle through matching commands
-zinit ice wait'1'
+zinit ice wait'1' silent
 zinit light zsh-users/zsh-history-substring-search
 
 
@@ -123,12 +123,12 @@ zinit light zsh-users/zsh-history-substring-search
 
 # Desktop notification when long-running commands finish (async)
 # Great for builds, installs, and scripts
-zinit ice wait'2'
+zinit ice wait'2' silent
 zinit light MichaelAquilina/zsh-auto-notify
 
 # Gently reminds you to use existing aliases (async)
 # Example: suggests `gs` when you type `git status`
-zinit ice wait'2'
+zinit ice wait'2' silent
 zinit light MichaelAquilina/zsh-you-should-use
 
 
@@ -136,7 +136,7 @@ zinit light MichaelAquilina/zsh-you-should-use
 
 # Shared color definitions for ls / eza / tree (async)
 # Makes file listings consistent across tools
-zinit ice wait'1'
+zinit ice wait'1' silent
 zinit light trapd00r/LS_COLORS
 
 

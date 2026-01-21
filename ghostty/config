@@ -114,22 +114,18 @@ split-divider-color = #414868
 
 
 # =========================================================
-# KEYBINDINGS
-# Productivity-first defaults
+# KEYBINDINGS (Known-good for Ghostty 1.2.x on macOS)
 # =========================================================
-
-keybind = cmd+t        = new_tab
-keybind = cmd+w        = close_surface
-keybind = cmd+n        = new_window
-
-keybind = cmd+shift+t  = new_split:right
-keybind = cmd+shift+d  = new_split:down
-
-keybind = cmd+1        = goto_tab:1
-keybind = cmd+2        = goto_tab:2
-keybind = cmd+3        = goto_tab:3
-keybind = cmd+4        = goto_tab:4
-keybind = cmd+5        = goto_tab:5
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+n=new_window
+keybind = cmd+shift+t=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+1=goto_tab:1
+keybind = cmd+2=goto_tab:2
+keybind = cmd+3=goto_tab:3
+keybind = cmd+4=goto_tab:4
+keybind = cmd+5=goto_tab:5
 
 
 # =========================================================

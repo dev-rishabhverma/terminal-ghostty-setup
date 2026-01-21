@@ -27,7 +27,7 @@
     // Change this path to point to your own logo image
     // Example:
     // "/home/username/.config/fastfetch/logo.png"
-    "source": "/Users/{{ USER_NAME }}/.config/fastfetch/logo.png",
+    "source": "/Users/rishabh/.config/fastfetch/logo.png",
 
     // Logo size (tweak based on terminal font size)
     "width": 40,
@@ -63,7 +63,7 @@
       // ❗ USER ACTION REQUIRED
       // Replace with your name / hostname / alias or any other text
       "type": "title",
-      "format": "{{ ANY_TEXT }}",
+      "format": "Rishabh",
     },
 
     "break",
