@@ -1,0 +1,103 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  // =========================================================
+  // Rishabh’s Fastfetch Configuration
+  // ---------------------------------------------------------
+  // Author  : Rishabh
+  // GitHub  : https://github.com/dev-rishabhverma
+  // License : MIT
+  // =========================================================
+  //
+  // =========================================================
+  // LOGO CONFIGURATION
+  // =========================================================
+  // Displays a custom image logo instead of ASCII text
+  // NOTE: You MUST update the path below to match your system
+  // ---------------------------------------------------------
+  // REQUIRED:
+  // - fastfetch built with image support
+  // - Kitty / Ghostty compatible terminal
+  // - A valid image file at the given path
+  // =========================================================
+
+  "logo": {
+    "type": "kitty-direct",
+
+    // ❗ USER ACTION REQUIRED
+    // Change this path to point to your own logo image
+    // Example:
+    // "/home/username/.config/fastfetch/logo.png"
+    "source": "/Users/{{ USER_NAME }}/.config/fastfetch/logo.png",
+
+    // Logo size (tweak based on terminal font size)
+    "width": 40,
+    "height": 20,
+
+    // Padding around the logo
+    "padding": {
+      "top": 2,
+      "left": 3,
+    },
+  },
+
+  // =========================================================
+  // DISPLAY SETTINGS
+  // =========================================================
+
+  "display": {
+    // Accent color used for labels
+    "color": "blue",
+
+    // Separator between label and value
+    "separator": " -> ",
+  },
+
+  // =========================================================
+  // MODULE ORDER
+  // Controls what information is shown and in what order
+  // =========================================================
+
+  "modules": [
+    {
+      // Custom title shown at the top
+      // ❗ USER ACTION REQUIRED
+      // Replace with your name / hostname / alias or any other text
+      "type": "title",
+      "format": "{{ ANY_TEXT }}",
+    },
+
+    "break",
+    "separator",
+
+    // --- System -------------------------------------------
+    "os",
+    "host",
+    "uptime",
+    "packages",
+
+    // --- Shell / UI ---------------------------------------
+    "shell",
+    "terminal",
+    "terminalfont",
+    "display",
+    "de",
+    "wm",
+    "wmtheme",
+    "theme",
+    "icons",
+    "font",
+
+    // --- Hardware -----------------------------------------
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+
+    // --- Power --------------------------------------------
+    "battery",
+    "poweradapter",
+
+    "break",
+  ],
+}

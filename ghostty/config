@@ -1,0 +1,175 @@
+# =========================================================
+# Rishabh’s Ghostty Configuration
+# ---------------------------------------------------------
+# macOS-first • GPU-accelerated
+# Author  : Rishabh
+# License : MIT
+# GitHub  : https://github.com/dev-rishabhverma
+# Terminal : Ghostty
+# Shell    : Zsh
+# Font     : MesloLGS Nerd Font Mono
+# Theme    : Vesper
+# =========================================================
+
+# =========================================================
+# FONT & TEXT RENDERING
+# =========================================================
+
+# Primary font (Nerd Font required for icons)
+font-family = MesloLGS Nerd Font Mono
+font-size   = 14
+
+# Enable programming ligatures
+# Improves readability for operators (=> != ===)
+font-feature = +calt,+liga,+dlig
+
+# Improve text sharpness on macOS
+font-thicken       = true
+adjust-cell-height = 2
+
+
+# =========================================================
+# COLORS & TRANSPARENCY
+# =========================================================
+
+# Theme colors
+theme = Vesper
+
+# Fully opaque background
+background-opacity = 1
+
+# Correct alpha blending for smooth visuals
+alpha-blending   = linear-corrected
+minimum-contrast = 1.5
+
+
+# =========================================================
+# WINDOW LAYOUT & APPEARANCE
+# =========================================================
+
+# Padding around terminal content
+window-padding-x        = 20
+window-padding-y        = 16
+window-padding-balance  = true
+window-padding-color    = extend
+
+# Default window size (columns x rows)
+window-width  = 120
+window-height = 25
+
+# Window decorations & behavior
+window-decoration              = true
+window-theme                   = dark
+window-colorspace              = srgb
+window-inherit-working-directory = true
+window-inherit-font-size        = true
+window-save-state               = always
+
+# macOS-specific visuals
+macos-titlebar-style = "transparent"
+macos-window-shadow  = true
+macos-option-as-alt  = true
+
+
+# =========================================================
+# SHELL INTEGRATION
+# =========================================================
+
+# Enable deep shell integration automatically
+# Required for cursor sync, sudo indicators, title updates
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
+
+
+# =========================================================
+# INPUT & INTERACTION
+# =========================================================
+
+# Mouse behavior
+mouse-hide-while-typing = true
+cursor-click-to-move    = true
+focus-follows-mouse     = false
+
+# Clipboard behavior
+clipboard-read                = allow
+clipboard-write               = allow
+copy-on-select                = true
+clipboard-trim-trailing-spaces = true
+click-repeat-interval         = 500
+
+# Scrolling
+scrollback-limit        = 100000
+mouse-scroll-multiplier = 3
+
+
+# =========================================================
+# SPLITS & MULTI-PANE UX
+# =========================================================
+
+# Dim inactive panes slightly
+unfocused-split-opacity = 0.7
+
+# Divider color between splits
+split-divider-color = #414868
+
+
+# =========================================================
+# KEYBINDINGS
+# Productivity-first defaults
+# =========================================================
+
+keybind = cmd+t        = new_tab
+keybind = cmd+w        = close_surface
+keybind = cmd+n        = new_window
+
+keybind = cmd+shift+t  = new_split:right
+keybind = cmd+shift+d  = new_split:down
+
+keybind = cmd+1        = goto_tab:1
+keybind = cmd+2        = goto_tab:2
+keybind = cmd+3        = goto_tab:3
+keybind = cmd+4        = goto_tab:4
+keybind = cmd+5        = goto_tab:5
+
+
+# =========================================================
+# PERFORMANCE
+# =========================================================
+
+# Enable vertical sync for smoother rendering
+window-vsync = true
+
+# Resize feedback behavior
+resize-overlay           = after-first
+resize-overlay-position  = center
+
+
+# =========================================================
+# LINKS, TITLES & MISC
+# =========================================================
+
+# Auto-detect and open URLs
+link-url = true
+
+# Disable clipboard copy notifications
+app-notifications = no-clipboard-copy
+
+# Bright text for bold fonts
+bold-is-bright = true
+
+# Let shell handle titles
+title-report = false
+
+# Inherit working directory on new tabs/splits
+working-directory = inherit
+
+
+# =========================================================
+# SESSION BEHAVIOR
+# =========================================================
+
+# Don't prompt on close
+confirm-close-surface = false
+
+# Keep app open when last window closes
+quit-after-last-window-closed = false
