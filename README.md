@@ -1,3 +1,5 @@
+![Terminal Preview](screenshots/terminal.png)
+
 # 🚀 Modern Terminal Setup (Beginner-Friendly)
 
 A clean, fast, and modern terminal setup built for macOS, designed to be easy to understand even if you've never customized a terminal before.
