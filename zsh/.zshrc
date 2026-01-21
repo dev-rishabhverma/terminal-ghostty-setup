@@ -100,37 +100,43 @@ source "$ZINIT_HOME/zinit.zsh"
 # Must be loaded early for correct coloring
 zinit light zsh-users/zsh-syntax-highlighting
 
-# Fish-like autosuggestions based on history
+# Fish-like autosuggestions based on history (async)
 # Accept with → or Ctrl+E
+zinit ice wait'0'
 zinit light zsh-users/zsh-autosuggestions
 
 
 # --- Completion & navigation ----------------------------
 
-# Enhanced Tab completion with fzf-style UI
+# Enhanced Tab completion with fzf-style UI (async)
 # Shows previews, groups, and descriptions
+zinit ice wait'1'
 zinit light Aloxaf/fzf-tab
 
-# Search command history using partial matches
+# Search command history using partial matches (async)
 # ↑ / ↓ cycle through matching commands
+zinit ice wait'1'
 zinit light zsh-users/zsh-history-substring-search
 
 
 # --- Productivity helpers -------------------------------
 
-# Desktop notification when long-running commands finish
+# Desktop notification when long-running commands finish (async)
 # Great for builds, installs, and scripts
+zinit ice wait'2'
 zinit light MichaelAquilina/zsh-auto-notify
 
-# Gently reminds you to use existing aliases
+# Gently reminds you to use existing aliases (async)
 # Example: suggests `gs` when you type `git status`
+zinit ice wait'2'
 zinit light MichaelAquilina/zsh-you-should-use
 
 
 # --- Visual consistency --------------------------------
 
-# Shared color definitions for ls / eza / tree
+# Shared color definitions for ls / eza / tree (async)
 # Makes file listings consistent across tools
+zinit ice wait'1'
 zinit light trapd00r/LS_COLORS
 
 
@@ -164,7 +170,7 @@ autoload -Uz compinit
 
 # Initialize completion using cache
 # -C = skip security checks for faster startup (safe for single-user systems)
-compinit -C
+compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 
 
 # -------------------------
@@ -189,16 +195,27 @@ eval "$(starship init zsh)"
 
 # -------------------------
 # Zoxide (smart cd)
+# Lazy-loaded on first use
 # -------------------------
-eval "$(zoxide init zsh)"
+z() {
+  unfunction z
+  eval "$(zoxide init zsh)"
+  z "$@"
+}
 
 # -------------------------
 # FZF
+# Lazy-loaded on first use
 # -------------------------
-if command -v fzf >/dev/null; then
-  eval "$(fzf --zsh)"
-  export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
-fi
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+
+fzf() {
+  unfunction fzf
+  command -v fzf >/dev/null || return
+  eval "$(command fzf --zsh)"
+  fzf "$@"
+}
+
 
 # -------------------------
 # File Listing (eza)
@@ -275,7 +292,8 @@ fi
 
 # Display a fast system overview when a new terminal opens
 # Runs only in interactive shells and only if fastfetch is installed
-if [[ -o interactive ]] && command -v fastfetch >/dev/null 2>&1; then
+if [[ -o interactive ]] && [[ -z "$FASTFETCH_SHOWN" ]] && command -v fastfetch >/dev/null 2>&1; then
+  export FASTFETCH_SHOWN=1
   fastfetch
 fi
 

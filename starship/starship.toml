@@ -126,9 +126,6 @@ disabled = true
 symbol   = " "
 disabled = true
 
-[kubernetes]
-disabled = true
-
 
 # -------------------------
 # Command Execution
